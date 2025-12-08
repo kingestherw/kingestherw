@@ -1,0 +1,478 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Elevator Pitch - Esther King'ori</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+            color: #333;
+            background: #f4f4f4;
+        }
+
+        /* Navigation */
+        nav {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            padding: 1rem 0;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+        }
+
+        nav .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 2rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        nav .logo {
+            color: white;
+            font-size: 1.3rem;
+            font-weight: bold;
+            text-decoration: none;
+        }
+
+        nav ul {
+            list-style: none;
+            display: flex;
+            gap: 2rem;
+        }
+
+        nav a {
+            color: white;
+            text-decoration: none;
+            transition: opacity 0.3s;
+            font-weight: 500;
+        }
+
+        nav a:hover {
+            opacity: 0.7;
+        }
+
+        /* Page Header */
+        .page-header {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            padding: 80px 2rem 60px;
+            text-align: center;
+        }
+
+        .page-header h1 {
+            font-size: 3rem;
+            margin-bottom: 1rem;
+        }
+
+        .page-header p {
+            font-size: 1.2rem;
+            opacity: 0.9;
+        }
+
+        /* Content Section */
+        .content {
+            max-width: 900px;
+            margin: 0 auto;
+            padding: 60px 2rem;
+        }
+
+        /* Video Placeholder */
+        .video-section {
+            background: white;
+            padding: 3rem;
+            border-radius: 15px;
+            box-shadow: 0 5px 20px rgba(0,0,0,0.1);
+            margin-bottom: 3rem;
+            text-align: center;
+        }
+
+        .video-placeholder {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            padding: 6rem 2rem;
+            border-radius: 12px;
+            margin-bottom: 2rem;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .video-placeholder::before {
+            content: "🎬";
+            font-size: 5rem;
+            display: block;
+            margin-bottom: 1rem;
+            animation: pulse 2s infinite;
+        }
+
+        @keyframes pulse {
+            0%, 100% {
+                transform: scale(1);
+                opacity: 1;
+            }
+            50% {
+                transform: scale(1.1);
+                opacity: 0.8;
+            }
+        }
+
+        .video-placeholder h3 {
+            font-size: 2rem;
+            margin-bottom: 1rem;
+        }
+
+        .video-placeholder p {
+            font-size: 1.1rem;
+            opacity: 0.9;
+            max-width: 600px;
+            margin: 0 auto;
+        }
+
+        .coming-soon-badge {
+            display: inline-block;
+            background: rgba(255, 255, 255, 0.2);
+            padding: 10px 25px;
+            border-radius: 25px;
+            font-weight: bold;
+            margin-top: 1.5rem;
+            font-size: 1.1rem;
+        }
+
+        /* Info Box */
+        .info-box {
+            background: #f0f4ff;
+            border-left: 5px solid #667eea;
+            padding: 2rem;
+            border-radius: 8px;
+            margin-bottom: 3rem;
+        }
+
+        .info-box h3 {
+            color: #667eea;
+            margin-bottom: 1rem;
+            font-size: 1.5rem;
+        }
+
+        .info-box p {
+            color: #555;
+            line-height: 1.8;
+            font-size: 1.05rem;
+        }
+
+        /* Pitch Preview Section */
+        .pitch-preview {
+            background: white;
+            padding: 3rem;
+            border-radius: 15px;
+            box-shadow: 0 5px 20px rgba(0,0,0,0.1);
+            margin-bottom: 3rem;
+        }
+
+        .pitch-preview h2 {
+            color: #667eea;
+            margin-bottom: 2rem;
+            font-size: 2rem;
+            text-align: center;
+        }
+
+        .pitch-element {
+            background: #f9f9f9;
+            padding: 2rem;
+            margin-bottom: 2rem;
+            border-radius: 10px;
+            border-left: 4px solid #667eea;
+        }
+
+        .pitch-element h3 {
+            color: #667eea;
+            margin-bottom: 1rem;
+            font-size: 1.3rem;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        .pitch-element p {
+            color: #555;
+            line-height: 1.8;
+            font-size: 1.05rem;
+        }
+
+        .pitch-element ul {
+            margin-top: 1rem;
+            margin-left: 1.5rem;
+            color: #555;
+        }
+
+        .pitch-element li {
+            margin-bottom: 0.5rem;
+            line-height: 1.7;
+        }
+
+        /* Timeline Section */
+        .timeline {
+            background: white;
+            padding: 3rem;
+            border-radius: 15px;
+            box-shadow: 0 5px 20px rgba(0,0,0,0.1);
+            margin-bottom: 3rem;
+        }
+
+        .timeline h2 {
+            color: #667eea;
+            margin-bottom: 2rem;
+            text-align: center;
+            font-size: 2rem;
+        }
+
+        .timeline-item {
+            display: flex;
+            align-items: center;
+            gap: 2rem;
+            padding: 1.5rem;
+            background: #f9f9f9;
+            border-radius: 10px;
+            margin-bottom: 1.5rem;
+        }
+
+        .timeline-icon {
+            font-size: 2.5rem;
+            min-width: 60px;
+            text-align: center;
+        }
+
+        .timeline-content h3 {
+            color: #667eea;
+            margin-bottom: 0.5rem;
+        }
+
+        .timeline-content p {
+            color: #555;
+        }
+
+        /* CTA Section */
+        .cta-section {
+            text-align: center;
+            padding: 3rem;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            border-radius: 15px;
+            box-shadow: 0 5px 20px rgba(102, 126, 234, 0.3);
+        }
+
+        .cta-section h2 {
+            font-size: 2rem;
+            margin-bottom: 1rem;
+        }
+
+        .cta-section p {
+            font-size: 1.1rem;
+            margin-bottom: 2rem;
+            opacity: 0.9;
+        }
+
+        .btn {
+            padding: 12px 30px;
+            border-radius: 25px;
+            text-decoration: none;
+            font-weight: bold;
+            transition: all 0.3s;
+            display: inline-block;
+            margin: 0.5rem;
+        }
+
+        .btn-white {
+            background: white;
+            color: #667eea;
+        }
+
+        .btn-white:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 10px 30px rgba(0,0,0,0.3);
+        }
+
+        .btn-outline {
+            background: transparent;
+            color: white;
+            border: 2px solid white;
+        }
+
+        .btn-outline:hover {
+            background: white;
+            color: #667eea;
+            transform: translateY(-3px);
+        }
+
+        /* Footer */
+        footer {
+            background: #333;
+            color: white;
+            text-align: center;
+            padding: 2rem;
+            margin-top: 3rem;
+        }
+
+        footer a {
+            color: white;
+            text-decoration: none;
+        }
+
+        footer a:hover {
+            text-decoration: underline;
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            nav ul {
+                gap: 1rem;
+                font-size: 0.9rem;
+            }
+
+            .page-header h1 {
+                font-size: 2rem;
+            }
+
+            .video-placeholder {
+                padding: 4rem 1.5rem;
+            }
+
+            .video-placeholder h3 {
+                font-size: 1.5rem;
+            }
+
+            .timeline-item {
+                flex-direction: column;
+                text-align: center;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Navigation -->
+    <nav>
+        <div class="container">
+            <a href="index.html" class="logo">EK</a>
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="bio.html">Bio</a></li>
+                <li><a href="portfolio.html">Portfolio</a></li>
+                <li><a href="pitch.html">Elevator Pitch</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- Page Header -->
+    <section class="page-header">
+        <h1>My Elevator Pitch</h1>
+        <p>A compelling introduction to my professional value and goals</p>
+    </section>
+
+    <!-- Content -->
+    <div class="content">
+        <!-- Video Section -->
+        <div class="video-section">
+            <div class="video-placeholder">
+                <h3>Elevator Pitch Video</h3>
+                <p>My video elevator pitch will be uploaded here in Week 12. Stay tuned for a compelling presentation of my professional journey, skills, and aspirations!</p>
+                <span class="coming-soon-badge">📹 Coming in Week 12</span>
+            </div>
+            <p style="color: #666; font-size: 1.05rem; line-height: 1.8;">
+                An elevator pitch is a brief, persuasive speech that sparks interest in what you do. In Week 12, I'll be recording and uploading my video pitch here, where I'll introduce myself, highlight my key skills, demonstrate my value proposition, and share what I'm looking for in my career.
+            </p>
+        </div>
+
+        <!-- Info Box -->
+        <div class="info-box">
+            <h3>📌 What to Expect in My Pitch</h3>
+            <p>My elevator pitch will be a concise 60-90 second introduction that clearly communicates who I am, what I do, what makes me unique, and what I'm seeking. It will be engaging, memorable, and tailored to showcase my strengths in ICT, cybersecurity, and data analysis while highlighting my unique perspective from luxury brand management studies.</p>
+        </div>
+
+        <!-- Pitch Preview -->
+        <div class="pitch-preview">
+            <h2>Pitch Framework Preview</h2>
+            
+            <div class="pitch-element">
+                <h3>👋 Who I Am</h3>
+                <p>I'm Esther King'ori, an ICT Specialist with expertise in cybersecurity, data analysis, and systems support. I bring a unique combination of technical depth and business understanding to every project I undertake.</p>
+            </div>
+
+            <div class="pitch-element">
+                <h3>💡 What I Do</h3>
+                <p>I secure digital infrastructure, analyze data for actionable insights, and provide reliable technical support. My work focuses on protecting organizations' digital assets while enabling innovation and growth through technology.</p>
+            </div>
+
+            <div class="pitch-element">
+                <h3>⭐ What Makes Me Unique</h3>
+                <p>I combine technical expertise with an understanding of luxury brand management and client experience. This gives me a distinctive perspective on creating secure, user-centered solutions that balance protection with accessibility—particularly valuable in today's digital economy where customer experience and security must coexist.</p>
+            </div>
+
+            <div class="pitch-element">
+                <h3>🎯 My Value Proposition</h3>
+                <p>I deliver:</p>
+                <ul>
+                    <li>Robust cybersecurity solutions that protect without hindering user experience</li>
+                    <li>Data-driven insights that inform strategic decisions</li>
+                    <li>Reliable technical support with a focus on problem prevention</li>
+                    <li>A unique perspective that bridges technology and business needs</li>
+                </ul>
+            </div>
+
+            <div class="pitch-element">
+                <h3>🚀 What I'm Looking For</h3>
+                <p>I'm seeking opportunities to apply my skills in organizations that value innovation, security, and ethical digital practices. I'm particularly interested in roles where I can contribute to cybersecurity strategy, data protection initiatives, or digital transformation projects.</p>
+            </div>
+        </div>
+
+        <!-- Timeline -->
+        <div class="timeline">
+            <h2>📅 Production Timeline</h2>
+            
+            <div class="timeline-item">
+                <div class="timeline-icon">✅</div>
+                <div class="timeline-content">
+                    <h3>Week 11 - Framework Development</h3>
+                    <p>Establishing the structure and key messaging for the elevator pitch</p>
+                </div>
+            </div>
+
+            <div class="timeline-item">
+                <div class="timeline-icon">🎬</div>
+                <div class="timeline-content">
+                    <h3>Week 12 - Recording & Upload</h3>
+                    <p>Recording the video pitch and uploading it to this page</p>
+                </div>
+            </div>
+
+            <div class="timeline-item">
+                <div class="timeline-icon">🎯</div>
+                <div class="timeline-content">
+                    <h3>Ongoing - Refinement</h3>
+                    <p>Continuously improving the pitch based on feedback and experience</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- CTA Section -->
+        <div class="cta-section">
+            <h2>Want to Learn More?</h2>
+            <p>While you wait for my video pitch, explore my bio and portfolio to get a comprehensive view of my work</p>
+            <a href="bio.html" class="btn btn-white">Read My Bio</a>
+            <a href="portfolio.html" class="btn btn-white">View Portfolio</a>
+            <a href="mailto:kingestherw@gmail.com" class="btn btn-outline">Contact Me</a>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer>
+        <p>&copy; 2024 Esther King'ori. All rights reserved.</p>
+        <p>📧 <a href="mailto:kingestherw@gmail.com">kingestherw@gmail.com</a></p>
+    </footer>
+</body>
+</html>

@@ -1,0 +1,333 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Esther King'ori - ICT Specialist</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+            color: #333;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+        }
+
+        /* Navigation */
+        nav {
+            background: rgba(255, 255, 255, 0.1);
+            backdrop-filter: blur(10px);
+            padding: 1rem 0;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+        }
+
+        nav .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 2rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        nav .logo {
+            color: white;
+            font-size: 1.3rem;
+            font-weight: bold;
+            text-decoration: none;
+        }
+
+        nav ul {
+            list-style: none;
+            display: flex;
+            gap: 2rem;
+        }
+
+        nav a {
+            color: white;
+            text-decoration: none;
+            transition: opacity 0.3s;
+            font-weight: 500;
+        }
+
+        nav a:hover {
+            opacity: 0.7;
+        }
+
+        /* Hero Section */
+        .hero {
+            flex: 1;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            padding: 2rem;
+            color: white;
+        }
+
+        .hero-content {
+            max-width: 800px;
+        }
+
+        .hero h1 {
+            font-size: 4rem;
+            margin-bottom: 1rem;
+            animation: fadeInUp 1s ease;
+        }
+
+        .hero .tagline {
+            font-size: 1.8rem;
+            margin-bottom: 1rem;
+            opacity: 0.95;
+            animation: fadeInUp 1.2s ease;
+        }
+
+        .hero .subtitle {
+            font-size: 1.2rem;
+            margin-bottom: 3rem;
+            opacity: 0.9;
+            animation: fadeInUp 1.4s ease;
+        }
+
+        .cta-buttons {
+            display: flex;
+            gap: 1.5rem;
+            justify-content: center;
+            flex-wrap: wrap;
+            animation: fadeInUp 1.6s ease;
+        }
+
+        .btn {
+            padding: 15px 35px;
+            border-radius: 30px;
+            text-decoration: none;
+            font-weight: bold;
+            transition: all 0.3s;
+            display: inline-block;
+        }
+
+        .btn-primary {
+            background: white;
+            color: #667eea;
+        }
+
+        .btn-primary:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 10px 25px rgba(0,0,0,0.2);
+        }
+
+        .btn-secondary {
+            background: transparent;
+            color: white;
+            border: 2px solid white;
+        }
+
+        .btn-secondary:hover {
+            background: white;
+            color: #667eea;
+            transform: translateY(-3px);
+        }
+
+        /* Quick Links Section */
+        .quick-links {
+            background: rgba(255, 255, 255, 0.1);
+            backdrop-filter: blur(10px);
+            padding: 3rem 2rem;
+        }
+
+        .quick-links .container {
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .quick-links h2 {
+            text-align: center;
+            color: white;
+            margin-bottom: 2rem;
+            font-size: 2rem;
+        }
+
+        .links-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 2rem;
+        }
+
+        .link-card {
+            background: white;
+            padding: 2rem;
+            border-radius: 15px;
+            text-align: center;
+            transition: transform 0.3s;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+        }
+
+        .link-card:hover {
+            transform: translateY(-10px);
+        }
+
+        .link-card-icon {
+            font-size: 3rem;
+            margin-bottom: 1rem;
+        }
+
+        .link-card h3 {
+            color: #667eea;
+            margin-bottom: 1rem;
+            font-size: 1.5rem;
+        }
+
+        .link-card p {
+            color: #666;
+            margin-bottom: 1.5rem;
+        }
+
+        .link-card a {
+            color: #667eea;
+            text-decoration: none;
+            font-weight: bold;
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        .link-card a:hover {
+            text-decoration: underline;
+        }
+
+        /* Footer */
+        footer {
+            background: rgba(0, 0, 0, 0.3);
+            color: white;
+            text-align: center;
+            padding: 2rem;
+            margin-top: auto;
+        }
+
+        footer p {
+            margin-bottom: 0.5rem;
+        }
+
+        footer a {
+            color: white;
+            text-decoration: none;
+        }
+
+        footer a:hover {
+            text-decoration: underline;
+        }
+
+        /* Animations */
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            nav ul {
+                gap: 1rem;
+            }
+
+            .hero h1 {
+                font-size: 2.5rem;
+            }
+
+            .hero .tagline {
+                font-size: 1.3rem;
+            }
+
+            .hero .subtitle {
+                font-size: 1rem;
+            }
+
+            .cta-buttons {
+                flex-direction: column;
+                align-items: center;
+            }
+
+            .btn {
+                width: 100%;
+                max-width: 300px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Navigation -->
+    <nav>
+        <div class="container">
+            <a href="index.html" class="logo">EK</a>
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="bio.html">Bio</a></li>
+                <li><a href="portfolio.html">Portfolio</a></li>
+                <li><a href="pitch.html">Elevator Pitch</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="hero-content">
+            <h1>Esther King'ori</h1>
+            <p class="tagline">ICT Specialist | Cybersecurity | Data Analyst</p>
+            <p class="subtitle">Building secure digital solutions through technical expertise and continuous innovation</p>
+            <div class="cta-buttons">
+                <a href="bio.html" class="btn btn-primary">Learn About Me</a>
+                <a href="portfolio.html" class="btn btn-secondary">View My Work</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Quick Links Section -->
+    <section class="quick-links">
+        <div class="container">
+            <h2>Explore My Journey</h2>
+            <div class="links-grid">
+                <div class="link-card">
+                    <div class="link-card-icon">👤</div>
+                    <h3>My Bio</h3>
+                    <p>Learn about my background, experience, and professional journey in technology</p>
+                    <a href="bio.html">Read More →</a>
+                </div>
+
+                <div class="link-card">
+                    <div class="link-card-icon">💼</div>
+                    <h3>Portfolio</h3>
+                    <p>Explore my projects, skills, and technical accomplishments</p>
+                    <a href="portfolio.html">View Projects →</a>
+                </div>
+
+                <div class="link-card">
+                    <div class="link-card-icon">🎯</div>
+                    <h3>Elevator Pitch</h3>
+                    <p>Discover my value proposition and professional goals</p>
+                    <a href="pitch.html">Watch Pitch →</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <p>&copy; 2025 Esther King'ori. All rights reserved.</p>
+        <p>📧 <a href="mailto:kingestherw@gmail.com">kingestherw@gmail.com</a></p>
+        <p>Building a better digital future, one solution at a time.</p>
+    </footer>
+</body>
+</html>
